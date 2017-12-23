@@ -54,11 +54,8 @@ export class TopicComponent implements OnInit {
       this._router.navigate(['logout']);
     } 
 
-    opmerking(event) { 
-      console.log(event); 
+    opmerking(evnt) { 
       console.log(this.elTitle.nativeElement.name);
-      console.log(this.opmerkingtoevoegen.controls);
-      console.log(this.opmerkingtoevoegen.value.topic); 
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
       /*const topic = new Topic("kop","hln");
