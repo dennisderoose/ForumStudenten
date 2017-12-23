@@ -11,8 +11,8 @@
 <br>
 <br>
 
-<form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking(f.value)' #f="ngForm">
-  <div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
+<form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking(f.value)' #f="ngForm" *ngFor="let topic of _topics">
+  <div class="ui segment" id='topic-component'>
     <h3 class="ui header" >{{topic?._name}}</h3>
     <p class="ui header" >{{topic?._vraag}}</p>
     <div class="field">
