@@ -16,7 +16,7 @@
     <h3 class="ui header" >{{topic?._name}}</h3>
     <p class="ui header" >{{topic?._vraag}}</p>
     <div class="field">
-    <input type="hidden" name="hide" formControlName='topic' value='hln'/>
+    <input type="hidden" name="hide" formControlName='topic' [ngModel]="topic?._name"/>
     <label for="Opmerking">Opmerking invullen:</label> 
     <input type="text" id="Opmerking" formControlName='opmerkingname' ngControl="opmerking" [ngModel]="">
     <button type='submit' class="ui positive right floated button">add</button>
