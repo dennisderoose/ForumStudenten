@@ -49,9 +49,10 @@ export class TopicComponent implements OnInit {
       this._router.navigate(['logout']);
     } 
 
-    opmerking() {      
+    opmerking($event:any) {  
+      console.log($event);    
       let nextArray = [];
-      const topic = new Topic("kop","hln");
+      /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
       topic.opmerkingen = nextArray;
@@ -64,6 +65,6 @@ export class TopicComponent implements OnInit {
               item.addIngredient(ing);
             }          
           });
-      });  
+      });*/  
     }   
 }
