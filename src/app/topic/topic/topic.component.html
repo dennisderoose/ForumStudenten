@@ -10,6 +10,21 @@
 <br>
 <br>
 <br>
+
+<form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking(f.value)' #f="ngForm">
+  <div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
+    <h3 class="ui header" >{{topic?._name}}</h3>
+    <p class="ui header" >{{topic?._vraag}}</p>
+    <div class="field">
+    <input type="hidden" name="hide" formControlName='topic' value='hln'/>
+    <label for="Opmerking">Opmerking invullen:</label> 
+    <input type="text" id="Opmerking" formControlName='opmerkingname' ngControl="opmerking" [ngModel]="topic?._name" type="text">
+    <button type='submit' class="ui positive right floated button">add</button>
+    </div> 
+  </div>
+</form>
+
+<!--
 <form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking()'>
   <div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
     <h3 class="ui header" >{{topic?._name}}</h3>
@@ -21,5 +36,5 @@
     <button type='submit' class="ui positive right floated button">add</button>
     </div> 
   </div>
-</form>
+</form>-->
 
