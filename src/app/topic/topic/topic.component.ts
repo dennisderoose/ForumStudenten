@@ -15,7 +15,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  @Input() model;
+  @Output() model;
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
   public uitloggenForum: FormGroup;
