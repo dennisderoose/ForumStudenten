@@ -1,5 +1,5 @@
 import { TopicDataService } from '../topic-data.service';
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
 import { Topic } from '../topic.model';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
@@ -16,6 +16,10 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class TopicComponent implements OnInit {
   @Output() model;
+
+  @ViewChild('title') 
+  private elTitle : ElementRef; 
+
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
   public uitloggenForum: FormGroup;
@@ -52,7 +56,7 @@ export class TopicComponent implements OnInit {
 
     opmerking(event) { 
       console.log(event); 
-      console.log(this.model);
+      console.log(this.elTitle);
       console.log(this.opmerkingtoevoegen.controls);
       console.log(this.opmerkingtoevoegen.value.topic); 
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
