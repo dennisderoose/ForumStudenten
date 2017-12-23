@@ -15,6 +15,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
+  @Input() model;
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
   public uitloggenForum: FormGroup;
@@ -51,6 +52,7 @@ export class TopicComponent implements OnInit {
 
     opmerking(form:any) { 
       console.log(form['opmerking']); 
+      console.log(this.model)
       console.log(this.opmerkingtoevoegen.value.topic); 
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
