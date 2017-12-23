@@ -56,7 +56,7 @@ export class TopicComponent implements OnInit {
 
     opmerking(event) { 
       console.log(event); 
-      console.log(this.elTitle);
+      console.log(this.elTitle.nativeElement.name);
       console.log(this.opmerkingtoevoegen.controls);
       console.log(this.opmerkingtoevoegen.value.topic); 
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
