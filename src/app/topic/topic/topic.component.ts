@@ -50,8 +50,8 @@ export class TopicComponent implements OnInit {
       this._router.navigate(['logout']);
     } 
 
-    opmerking(form:any) { 
-      console.log(form['opmerking']); 
+    opmerking(event) { 
+      console.log(event); 
       console.log(this.model);
       console.log(this.opmerkingtoevoegen); 
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
