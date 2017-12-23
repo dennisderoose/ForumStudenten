@@ -53,8 +53,9 @@ export class TopicComponent implements OnInit {
     opmerking(event) { 
       console.log(event); 
       console.log(this.model);
+      console.log(this.opmerkingtoevoegen.controls);
       console.log(this.opmerkingtoevoegen.value.topic); 
-      console.log(this.opmerkingtoevoegen.value.opmerkingname.name);    
+      console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
