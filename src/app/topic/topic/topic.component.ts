@@ -49,8 +49,8 @@ export class TopicComponent implements OnInit {
       this._router.navigate(['logout']);
     } 
 
-    opmerking($event:any) {  
-      console.log($event);    
+    opmerking() {  
+      console.log(this.opmerkingtoevoegen.value.opmerking);    
       let nextArray = [];
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
