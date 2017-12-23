@@ -1,0 +1,25 @@
+<h1>
+  Forum voor studenten
+</h1>
+<form [formGroup]='topictoevoegen' (ngSubmit)='onSubmit()' >
+    <button type='submit' class="ui positive left floated button">Eigen Topic aanmaken</button>
+</form>
+<form [formGroup]='uitloggenForum' (ngSubmit)='uitloggen()'>   
+    <button type='submit' class="ui positive right floated button">Uitloggen</button>
+</form>
+<br>
+<br>
+<br>
+<form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking()'>
+  <div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
+    <h3 class="ui header" >{{topic?._name}}</h3>
+    <p class="ui header" >{{topic?._vraag}}</p>
+    <div class="field">
+    <input type="hidden" name="hide" formControlName='topic' value="{{topic?._name}}"/>
+    <label for="Opmerking">Opmerking invullen:</label> 
+    <input type="text" id="Opmerking" formControlName='opmerkingname'>
+    <button type='submit' class="ui positive right floated button">add</button>
+    </div> 
+  </div>
+</form>
+

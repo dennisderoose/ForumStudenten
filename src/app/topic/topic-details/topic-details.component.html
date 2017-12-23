@@ -1,0 +1,11 @@
+<form [formGroup]='topic' (ngSubmit)='onSubmit()' class="ui large form segment error">
+  <h3 class="ui header">Toevoegen topic</h3>
+  <div class="field">
+    <label for="name_id">naam:</label>
+    <input type="text" id="name_id" formControlName='name'>
+    <label for="vraag_id">vraag:</label>
+    <input type="text" id="vraag_id" formControlName='vraag'>    
+  </div>
+  <button type='submit' class="ui positive right floated button">add</button>
+</form>
+<a class='item' routerLink="/topic" >topic</a>
