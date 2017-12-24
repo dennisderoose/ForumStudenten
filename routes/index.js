@@ -36,12 +36,12 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 router.put("/webapptaak/topics/:name", auth, function(req, res) {
   console.log("gelukt");
   console.log(req.opmerkingen);
-  /*res.save(function(err, post) {
+  res.save(function(err, post) {
     if (err) {
       return next(err);
     }
     res.json(topic);
-  });*/
+  });
 });
 
 
