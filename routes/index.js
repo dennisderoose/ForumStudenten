@@ -37,7 +37,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
   Topic.findByIdAndUpdate({
       id: req.params.id
   },{$set: {
-    opmerkingen: req.body.opmerkingen
+    name: req.body.name
   }}, {upsert: true}, function(err, Topic) {
     if(err) {
       res.status(500).send('cant update')
