@@ -8,7 +8,7 @@ export class Opmerking {
         return rec;
     }
 
-    constructor(id:string,name: string) {
+    constructor(id:string, name:string) {
         this._id = id;
         this._name = name;
     }
@@ -29,6 +29,7 @@ export class Opmerking {
     }
 
     toJSON() {
+        console.log(this._name);
         return {
             _id: this._id,
             name: this._name
