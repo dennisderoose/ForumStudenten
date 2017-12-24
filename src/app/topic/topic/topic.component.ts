@@ -88,9 +88,9 @@ export class TopicComponent implements OnInit {
           }
         });
         console.log(topic);
-        /*
+        
         this._topicDataService.updateTopic(topic,name).subscribe(item => {
-        });*/
+        });
 
 
       }
