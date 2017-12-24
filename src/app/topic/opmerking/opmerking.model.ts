@@ -4,7 +4,7 @@ export class Opmerking {
 
     static fromJSON(json): Opmerking {
         console.log(json);
-        const rec = new Opmerking(json.id,json.name);
+        const rec = new Opmerking(json.id,"json.name");
         rec._id = json._id;
 
         return rec;
