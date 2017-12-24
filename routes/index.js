@@ -33,6 +33,18 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
   });
 });
 
+router.put("/webapptaak/topics/:name", auth, function(req, res) {
+  console.log("gelukt");
+  console.log(req.opmerkingen);
+  /*res.save(function(err, post) {
+    if (err) {
+      return next(err);
+    }
+    res.json(topic);
+  });*/
+});
+
+
 router.param("topic", function(req, res, next, id) {
   let query = Topic.findById(id);
   query.exec(function(err, topic) {
@@ -46,6 +58,8 @@ router.param("topic", function(req, res, next, id) {
     return next();
   });
 });
+
+
 
 router.get("/webapptaak/topics/:topic", function(req, res) {
   req.topic.populate("opmerkingen", function(err, rec) {

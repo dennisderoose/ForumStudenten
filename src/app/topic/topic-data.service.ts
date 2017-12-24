@@ -11,6 +11,8 @@ export class TopicDataService {
   private _appUrl = '/webapptaak';
   private _topics;
 
+  ///webapptaak/topics/:id
+
   constructor(private http: Http, private auth: AuthenticationService) {
   }
 
@@ -28,6 +30,11 @@ export class TopicDataService {
   addNewTopic(rec): Observable<Topic> {
     return this.http.post(`${this._appUrl}/topics`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
       .map(res => res.json()).map(item => Topic.fromJSON(item));
+  }
+
+  updateTopic(rec,name): Observable<Topic> {
+    return this.http.post(`${this._appUrl}/topics/${name}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
+    .map(res => res.json()).map(item => Topic.fromJSON(item));    
   }
 
   removeTopic(rec) {

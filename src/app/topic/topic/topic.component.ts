@@ -74,10 +74,25 @@ export class TopicComponent implements OnInit {
         }
 
       });
-
+      //updaten van json object
       if(teller == 1) {
         console.log(value);
         console.log(name);
+
+        let topic;
+        
+        this._topics.forEach(function(element) {          
+          if(element.name == name) {
+            element.opmerkingen.push(new Opmerking(value));
+            topic = element;
+          }
+        });
+        console.log(topic);
+        /*
+        this._topicDataService.updateTopic(topic,name).subscribe(item => {
+        });*/
+
+
       }
       /*for(var i=0; i<this.elTitle.length; i++) {7
         
