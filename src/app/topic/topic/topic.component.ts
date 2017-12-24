@@ -64,7 +64,10 @@ export class TopicComponent implements OnInit {
     opmerking(evnt) {
       //console.log(this.elTitle.toArray); 
       this.elTitle.forEach(function(element) {
-        console.log(element.nativeElement.value);
+        if(element.nativeElement.value != "") {
+          console.log(element.nativeElement.value);
+          console.log(element.nativeElement.name);
+        }
     });
       /*for(var i=0; i<this.elTitle.length; i++) {7
         
