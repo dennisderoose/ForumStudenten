@@ -37,7 +37,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
   var ids = Topic.findById(req.params.id);
   console.log(ids);
   Topic.findByIdAndUpdate({
-      id: mongoose.Types.ObjectId("5a3fd8479536090014811201")
+      id: mongoose.Types.ObjectId("5a3e42db709f642c4438231c")
   },{$set: {
     opmerkingen: req.body.opmerkingen
   }}, {upsert: true}, function(err, Topic) {
