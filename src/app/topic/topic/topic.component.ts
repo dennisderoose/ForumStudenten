@@ -19,7 +19,7 @@ import { QueryList } from '@angular/core/src/linker/query_list';
 export class TopicComponent implements OnInit {
   @Output() model;
 
-  @ViewChildren("input") 
+  @ViewChildren("title") 
   private elTitle : QueryList<any>; 
 
   private _topics: Topic[];
