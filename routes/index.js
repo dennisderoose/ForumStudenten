@@ -35,7 +35,7 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 
 router.put("/webapptaak/topics/:id", auth, function(req, res) {
   Topic.findByIdAndUpdate({
-      id: req.params.id
+      id:  mongoose.Types.ObjectId(req.body.id)
   },{$set: {
     name: req.body.name
   }}, {upsert: true}, function(err, Topic) {
