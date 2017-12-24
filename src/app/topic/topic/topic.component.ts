@@ -55,7 +55,7 @@ export class TopicComponent implements OnInit {
     } 
 
     opmerking(evnt) {
-      console.log(this.elTitle.nativeElement); 
+      console.log(this.elTitle); 
       console.log(this.elTitle.nativeElement.name);
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
