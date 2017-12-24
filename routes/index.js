@@ -34,7 +34,7 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 });
 
 router.put("/webapptaak/topics/:name", auth, function(req, res) {
-  console.log("gelukt");
+  console.log("geukt");
   console.log(req.opmerkingen);
   req.save(function(err, post) {
     if (err) {
