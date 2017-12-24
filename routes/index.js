@@ -1,3 +1,4 @@
+
 var express = require("express");
 var router = express.Router();
 let mongoose = require("mongoose");
@@ -34,10 +35,8 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 });
 
 router.put("/webapptaak/topics/:id", auth, function(req, res) {
-  var ids = Topic.findById(req.params.id);
-  console.log(ids);
   Topic.findByIdAndUpdate({
-      id: mongoose.Types.ObjectId("5a3e42db709f642c4438231c")
+      id: req.params.id
   },{$set: {
     opmerkingen: req.body.opmerkingen
   }}, {upsert: true}, function(err, Topic) {
