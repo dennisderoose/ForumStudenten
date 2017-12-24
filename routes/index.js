@@ -34,13 +34,16 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 });
 
 router.put("/webapptaak/topics/:name", auth, function(req, res) {
-  console.log("geukt");
-  console.log(req.opmerkingen);
-  req.body.save(function(err, post) {
+  let topic = new Topic({
+    name: req.body.name,
+    vraag: req.body.vraag,
+    opmerkingen: req.body.opmerkingen
+  });
+  topic.save(function(err, post) {
     if (err) {
       return next(err);
     }
-    res.json(req);
+    res.json(topic);
   });
 });
 
