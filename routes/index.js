@@ -38,6 +38,8 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
   Topic.findOneAndUpdate({
       id: req.params.id
   },{$set: {
+    name: req.body.name,
+    vraag: req.body.vraag,
     opmerkingen: req.body.opmerkingen
   }}, {upsert: true}, function(err, Topic) {
     if(err) {
