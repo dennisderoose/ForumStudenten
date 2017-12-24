@@ -6,7 +6,7 @@ export class Topic {
     private _opmerkingen: Opmerking[];    
 
     static fromJSON(json): Topic {
-        const rec = new Topic(json._name, json._vraag, json._opmerkingen);
+        const rec = new Topic(json.name, json.vraag, json.opmerkingen);
         rec._id = json._id;
         return rec;
     }
