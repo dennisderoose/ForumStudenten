@@ -40,7 +40,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
     name: req.body.name
   }}, {upsert: true}, function(err, Topic) {
     if(err) {
-      res.status(500).send('cant update')
+      res.status(500).send(err)
     } else {
       console.log(Topic);
       res.status(204).send()
