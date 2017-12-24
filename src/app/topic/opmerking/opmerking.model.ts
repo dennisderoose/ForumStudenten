@@ -3,8 +3,10 @@ export class Opmerking {
     private _name: string;
 
     static fromJSON(json): Opmerking {
+        console.log(json);
         const rec = new Opmerking(json.id,json.name);
         rec._id = json._id;
+
         return rec;
     }
 
