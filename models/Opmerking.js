@@ -1,6 +1,7 @@
 let mongoose = require('mongoose');
 
 let OpmerkingSchema = new mongoose.Schema({
+    id: String,
     name: String
 });
 /*
