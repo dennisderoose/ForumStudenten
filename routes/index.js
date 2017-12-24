@@ -34,7 +34,14 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 });
 
 router.put("/webapptaak/topics/:name", auth, function(req, res) {
-  res.send();
+  console.log("geukt");
+  console.log(req.opmerkingen);
+  req.body.save(function(err, post) {
+    if (err) {
+      return next(err);
+    }
+    res.json(req);
+  });
 });
 
 
