@@ -34,7 +34,19 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 });
 
 router.put("/webapptaak/topics/:name", auth, function(req, res) {
-  let topic = new Topic({
+  Topic.findByIdAndUpdate({
+      name: req.params.name
+  },{$set: {
+    opmerkingen: req.body.opmerkingen
+  }}, {upsert: true}, function(err, Topic) {
+    if(err) {
+      res.status(500).send('cant update')
+    } else {
+      console.log(Topic);
+      res.status(204).send()
+    }
+  })
+  /*let topic = new Topic({
     name: req.body.name,
     vraag: req.body.vraag,
     opmerkingen: req.body.opmerkingen
@@ -44,7 +56,7 @@ router.put("/webapptaak/topics/:name", auth, function(req, res) {
       return next(err);
     }
     res.json(topic);
-  });
+  });*/
 });
 
 
