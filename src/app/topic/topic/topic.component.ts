@@ -17,7 +17,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class TopicComponent implements OnInit {
   @Output() model;
 
-  @ViewChild('title') 
+  @ViewChild('kop') 
   private elTitle : ElementRef; 
 
   private _topics: Topic[];
