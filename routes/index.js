@@ -35,7 +35,7 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 
 router.put("/webapptaak/topics/:name", auth, function(req, res) {
   Topic.findByIdAndUpdate({
-      name: req.params.name
+      id: req.params.id
   },{$set: {
     opmerkingen: req.body.opmerkingen
   }}, {upsert: true}, function(err, Topic) {
