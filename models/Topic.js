@@ -1,10 +1,9 @@
 let mongoose = require('mongoose');
 
 let TopicSchema = new mongoose.Schema({
-    id: mongoose.Types.ObjectId,
     name: String,
     vraag: String,
-    opmerkingen: [String]
+    opmerkingen: [{type: mongoose.Schema.Types.ObjectId, ref: 'Opmerking'}]
 });
 
 mongoose.model('Topic', TopicSchema);
