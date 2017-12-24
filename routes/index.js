@@ -46,7 +46,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
       console.log(gelukt);
       res.status(204).send()
     }
-  }).populate("opmerkingen")
+  });
   /*let topic = new Topic({
     name: req.body.name,
     vraag: req.body.vraag,
