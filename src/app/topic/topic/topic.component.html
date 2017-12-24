@@ -12,13 +12,13 @@
 <br>
 
 <form [formGroup]='opmerkingtoevoegen' (ngSubmit)='opmerking($event)' #f="ngForm" >
-  <div class="ui segment" id='topic-component' *ngFor="let topic of _topics">
+  <div class="ui segment" id='topic-component{{topic._name}}' *ngFor="let topic of _topics">
     <h3 class="ui header" >{{topic?._name}}</h3>
     <p class="ui header" >{{topic?._vraag}}</p>
     <div class="field">
     <label for="Opmerking">Opmerking invullen:</label> 
     <input type="text" id="Opmerking{{topic._name}}" formControlName='opmerkingname' [name]="topic._name" ngControl="opmerking" [ngModel]="" #title>
-    <button type='submit' class="ui positive right floated button">add</button>
+    <button type='submit' id="{{topic._name}}" class="ui positive right floated button">add</button>
     </div> 
   </div>
 </form>
