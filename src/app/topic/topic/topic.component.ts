@@ -28,9 +28,9 @@ export class TopicComponent implements OnInit {
     constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private _router: Router) {
     }
 
-    ngAfterViewInit(){
+    /*ngAfterViewInit(){
       console.log(this.elTitle.nativeElement);
-    } 
+    } */
 
   
     ngOnInit() {
