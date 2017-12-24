@@ -8,6 +8,8 @@ import { Opmerking } from 'app/topic/opmerking/opmerking.model';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import { ViewChildren } from '@angular/core/src/metadata/di';
+import { QueryList } from '@angular/core/src/linker/query_list';
 
 @Component({
   selector: 'app-topic',
@@ -17,8 +19,8 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class TopicComponent implements OnInit {
   @Output() model;
 
-  @ViewChild('title') 
-  private elTitle : ElementRef; 
+  @ViewChildren("input") 
+  private elTitle : QueryList<any>; 
 
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
@@ -61,7 +63,7 @@ export class TopicComponent implements OnInit {
 
     opmerking(evnt) {
       console.log(this.elTitle); 
-      console.log(this.elTitle.nativeElement.name);
+      //console.log(this.elTitle.nativeElement.name);
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
       /*const topic = new Topic("kop","hln");
