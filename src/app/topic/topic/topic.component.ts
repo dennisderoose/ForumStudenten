@@ -80,6 +80,7 @@ export class TopicComponent implements OnInit {
         console.log(name);
 
         let topic;
+
         
         this._topics.forEach(function(element) {          
           if(element.name == name) {
@@ -89,7 +90,7 @@ export class TopicComponent implements OnInit {
         });
         console.log(topic);
         
-        this._topicDataService.updateTopic(topic,name).subscribe(item => {
+        this._topicDataService.updateTopic(topic,topic.id).subscribe(item => {
         });
 
 

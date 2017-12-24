@@ -33,7 +33,7 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
   });
 });
 
-router.put("/webapptaak/topics/:name", auth, function(req, res) {
+router.put("/webapptaak/topics/:id", auth, function(req, res) {
   Topic.findByIdAndUpdate({
       id: req.params.id
   },{$set: {
