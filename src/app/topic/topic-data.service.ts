@@ -29,14 +29,17 @@ export class TopicDataService {
 
   addNewTopic(rec): Observable<Topic> {
     return this.http.post(`${this._appUrl}/topics`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
-      .map(res => res.json()).map(item => Topic.fromJSON(item));
+      .map(res => res.json()).map(item => {
+        console.log(item);
+        return Topic.fromJSON(item)
+      });
   }
 
   updateTopic(rec,id): Observable<Topic> {
     console.log(rec);
     console.log(id);
     return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
-    .map(res => res.json());    
+    .map(res => res.json()).map(item => Topic.fromJSON(item));    
   }
 
   removeTopic(rec) {
