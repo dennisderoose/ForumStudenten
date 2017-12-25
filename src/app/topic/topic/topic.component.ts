@@ -84,7 +84,7 @@ export class TopicComponent implements OnInit {
         
         this._topics.forEach(function(element) {          
           if(element.name == name) {
-            element.opmerkingen.push(new Opmerking(element.id,value));
+            element.opmerkingen.push(new Opmerking(element.id,"value"));
             topic = element;
           }
         });
