@@ -1,19 +1,11 @@
 let mongoose = require('mongoose');
+import { Opmerking } from '../src/app/topic/opmerking/opmerking.model' 
 
 let TopicSchema = new mongoose.Schema({
     id: String,
     name: String,
     vraag: String,
-    opmerkingen: [{
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Opmerking'
-        },
-        name: {
-            type: mongoose.Schema.Types.String,
-            ref: 'Opmerking'            
-        }
-    }]
+    opmerkingen: [Opmerking]
 });
 
 mongoose.model('Topic', TopicSchema);
