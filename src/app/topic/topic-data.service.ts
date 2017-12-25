@@ -38,7 +38,7 @@ export class TopicDataService {
     console.log(this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
     .map(res => res.json()).map(item => Topic.fromJSON(item)))
     return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
-    .map(res => res.json()));    
+    .map(res => res.json());    
   }
 
   removeTopic(rec) {
