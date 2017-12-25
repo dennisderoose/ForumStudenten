@@ -35,6 +35,7 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 });
 
 router.put("/webapptaak/topics/:id", auth, function(req, res) {
+  console.log(req.body);
   Topic.findOneAndUpdate({
       _id: req.params.id
   },{$set: {
