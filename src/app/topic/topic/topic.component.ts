@@ -90,9 +90,7 @@ export class TopicComponent implements OnInit {
         });
         console.log(topic);
         
-        this._topicDataService.updateTopic(topic,topic.id).subscribe(item => {
-          console.log(item.name);
-        });
+        this._topicDataService.updateTopic(topic,topic.id);
 
 
       }
