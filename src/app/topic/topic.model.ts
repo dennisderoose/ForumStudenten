@@ -7,7 +7,7 @@ export class Topic {
 
     static fromJSON(json): Topic {
         console.log(json);
-        const rec = new Topic(json.name, json.vraag, json.opmerkingen);
+        const rec = new Topic(json.vraag, json.opmerkingen);
         rec._id = json._id;
         return rec;
     }
