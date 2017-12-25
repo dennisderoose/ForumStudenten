@@ -5,7 +5,7 @@ let TopicSchema = new mongoose.Schema({
     id: String,
     name: String,
     vraag: String,
-    opmerkingen: [Opmerking]
+    opmerkingen: [String]
 });
 
 mongoose.model('Topic', TopicSchema);
