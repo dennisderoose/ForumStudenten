@@ -41,7 +41,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
   Topic.findOneAndUpdate({
       _id: req.params.id
   },{$set: {
-    name = "klm",
+    name = req.body.name,
     opmerkingen: req.body.opmerkingen
   }}, {upsert: true}, function(err, Topic) {
     if(err) {
