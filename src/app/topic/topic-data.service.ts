@@ -40,19 +40,10 @@ export class TopicDataService {
       }); 
   }
 
-  updateTopic(rec,id): Observable<Topic> {
+  updateTopic(rec,id): Observable<Response> {
     console.log(rec);
     console.log(id);
-    return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
-    .map(res => {
-      console.log(res.json)
-      res.json()
-    }).map(item => {
-      console.log("klm");
-      console.log(item);
-      console.log("klm");
-      return Topic.fromJSON(item)
-    });    
+    return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) });    
   }
 
   removeTopic(rec) {
