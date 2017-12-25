@@ -40,11 +40,20 @@ export class TopicDataService {
       }); 
   }
 
-  updateTopic(rec,id): Observable<Response> {
+  updateTopic(rec,id): Promise<Topic> {
     console.log(rec);
     console.log(id);
-    return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) });    
+    return this.http.put(`${this._appUrl}/topics/${id}`, JSON.stringify(rec), { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
+    .toPromise()
+    .then(() => rec)
+    .catch(this.handleError);    
   }
+
+  private handleError(error: any): Promise<any> {
+    console.error('An error occurred', error); // for demo purposes only
+    return Promise.reject(error.message || error);
+ }
+
 
   removeTopic(rec) {
     return this.http.delete(`${this._appUrl}/topic/${rec.id}`).map(res => res.json()).map(item => Topic.fromJSON(item));
