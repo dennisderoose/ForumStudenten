@@ -5,8 +5,14 @@ let TopicSchema = new mongoose.Schema({
     name: String,
     vraag: String,
     opmerkingen: [{
-        _id: String,
-        name: String
+        _id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Opmerking'
+        },
+        name: {
+            type: mongoose.Schema.Types.String,
+            ref: 'Opmerking'            
+        }
     }]
 });
 
