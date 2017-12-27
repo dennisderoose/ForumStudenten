@@ -29,15 +29,7 @@ export class TopicDataService {
 
   addNewTopic(rec): Observable<Topic> {
     return this.http.post(`${this._appUrl}/topics`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
-      .map(res => {
-        console.log(res.json)
-        res.json()
-      }).map(item => {
-        console.log("klm");
-        console.log(item);
-        console.log("klm");
-        return Topic.fromJSON(item)
-      }); 
+      .map(res => {res.json()}).map(item => {return Topic.fromJSON(item)}); 
   }
 
   updateTopic(rec,id): Promise<Topic> {

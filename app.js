@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 let passport = require('passport');
 
-require('./models/User');
-require('./models/Topic');
-require('./models/Opmerking');
+var user = require('./models/User');
+var topic = require('./models/Topic');
+var opmerking = require('./models/Opmerking');
 
 
 require('./config/passport');
@@ -59,5 +59,29 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+var opmerking = new opmerking({
+  name: "kop"
+});
+
+var top = new topic ({
+    name: "kops",
+    vraag: "kops",
+    opmerkingen: [{
+      name: opmerking.name
+    }]
+});
+
+top.save(function(error) {
+  if (!error) {
+      topic.find({})
+          .populate('name')
+          .exec(function(error, topics) {
+              console.log(JSON.stringify(topics, null, "\t"))
+          })
+  }
+});
+
+
 
 module.exports = app;
