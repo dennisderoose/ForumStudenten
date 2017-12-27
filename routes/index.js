@@ -57,7 +57,7 @@ Topic.findById(req.params.id, function(err, Topic) {
     res.send(err);
   }
 
-  Topic.name = "hln";
+  Topic.opmerkingen = req.body.opmerkingen;
 
   Topic.save(function(err) {
     if (err)
@@ -81,7 +81,7 @@ Topic.findById(req.params.id, function(err, Topic) {
       console.log("gelukt");
       res.status(204).send()
     }
-  });*/
+  });
   /*let topic = new Topic({
     name: req.body.name,
     vraag: req.body.vraag,
