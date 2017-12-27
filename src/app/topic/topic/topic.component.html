@@ -15,9 +15,8 @@
   <div class="ui segment" id='topic-component{{topic._name}}' *ngFor="let topic of _topics">
     <h3 class="ui header" >{{topic?._name}}</h3>
     <p class="ui header" >{{topic?._vraag}}</p>
-    <div class="ui segment" *ngFor="let opmerking of topic.opmerkingen">
-      <p class="ui header" >hvekslvksdmlvksdmlvksmlvkdslkvmsk</p>
-      <p>{{opmerking._name}}</p>
+    <div *ngFor="let opmerking of topic.opmerkingen">
+      <p>{{opmerking?.name}}</p>
     </div>
     <div class="field">
     <label for="Opmerking">Opmerking invullen:</label> 
