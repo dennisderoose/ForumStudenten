@@ -35,7 +35,7 @@ export class TopicDataService {
   updateTopic(rec,id): Promise<Topic> {
     console.log(rec.opmerkingen);
     console.log(id);
-    return this.http.put(`${this._appUrl}/topics/${id}`, JSON.stringify(rec), { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
+    return this.http.put(`${this._appUrl}/topics/${id}`, rec, { headers: new Headers({Authorization: `Bearer ${this.auth.token}`}) })
     .toPromise()
     .then(() => rec)
     .catch(this.handleError);    
