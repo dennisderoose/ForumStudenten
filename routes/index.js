@@ -56,7 +56,6 @@ Topic.findById(req.params.id, function(err, Topic) {
   if(err) {
     res.send(err);
   }
-  res.send(req.body.opmerkingen);
   Topic.opmerkingen = req.body.opmerkingen;
 
   Topic.save(function(err) {
