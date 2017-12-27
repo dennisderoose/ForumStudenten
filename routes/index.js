@@ -51,6 +51,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
     if(err) {
       res.status(500).send(err)
     } else {
+      console.log(Topic);
       console.log("gelukt");
       res.status(204).send()
     }
