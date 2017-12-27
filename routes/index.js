@@ -7,9 +7,6 @@ let jwt = require("express-jwt");
 let Topic = mongoose.model("Topic");
 let Opmerking = mongoose.model("Opmerking");
 
-
-import { Opmerkings } from './opmerking/opmerking.model';
-
 let auth = jwt({
   secret:  "ifthisendsupingithubyoufailtheclass",
   userProperty: "payload"
@@ -41,14 +38,14 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
 router.put("/webapptaak/topics/:id", auth, function(req, res) {
   console.log("k");
   console.log(req.body.opmerkingen);
-  let klm = []
-  klm.push(new Opmerking("hln"));
+  
   Topic.findOneAndUpdate({
       _id: req.params.id
   },{$set: {
-    opmerkingen: klm
+    opmerkingen: req.body.opmerkingen
   }}, {upsert: true}, function(err, Topic) {
     if(err) {
+      console.log(Topic);
       res.status(500).send(err)
     } else {
       console.log(Topic);
