@@ -52,9 +52,22 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
     })
   });*/
 
+Topic.findById(req.params.id, function(err, Topic) {
+  if(err) {
+    res.send(err);
+  }
 
+  Topic.name = "hln";
 
+  Topic.save(function(err) {
+    if (err)
+        res.send(err);
 
+    res.json({ message: 'Topic updated!' });
+  });
+});
+
+/*
   Topic.findOneAndUpdate({
       _id: req.params.id
   },{$set: {
@@ -68,7 +81,7 @@ router.put("/webapptaak/topics/:id", auth, function(req, res) {
       console.log("gelukt");
       res.status(204).send()
     }
-  });
+  });*/
   /*let topic = new Topic({
     name: req.body.name,
     vraag: req.body.vraag,
