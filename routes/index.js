@@ -25,7 +25,8 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
   console.log("h");
   let topic = new Topic({
     name: req.body.name,
-    vraag: req.body.vraag
+    vraag: req.body.vraag,
+    opmerkingen: req.body.opmerkingen
   });
   topic.save(function(err, post) {
     if (err) {

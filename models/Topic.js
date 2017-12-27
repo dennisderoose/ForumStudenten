@@ -5,8 +5,11 @@ let TopicSchema = new mongoose.Schema({
     name: String,
     vraag: String,
     opmerkingen: [{
-        _id: "5a3e7c4493d130001411d22b",
-        name: "cvdsvdds"
+        name: String,
+        _id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Opmerking'
+        }
     }]
 });
 
