@@ -8,15 +8,15 @@ export class Topic {
 
     static fromJSON(json): Topic {
         console.log(json);
-        const rec = new Topic(json.name, json.vraag, json.opmerkingen, json.user);
+        const rec = new Topic(json.name, json.vraag, json.user, json.opmerkingen);
         rec._id = json._id;
         return rec;
     }
 
-    constructor(name: string, vraag: string, user?:string, opmerkingen?: Opmerking[]) {
+    constructor(name: string, vraag: string, user?: string, opmerkingen?: Opmerking[]) {
         this._name = name;
         this._vraag = vraag;
-        this._user = user;
+        this._user = user || "";
         this._opmerkingen = opmerkingen || new Array<Opmerking>();
                 
     }
