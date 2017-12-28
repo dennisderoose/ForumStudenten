@@ -41,7 +41,6 @@ export class TopicComponent implements OnInit {
         // Defaults to 0 if no query param provided.
         this.user = params['user'] || "";
       });
-      console.log(this.user);
 
 
 
@@ -64,7 +63,7 @@ export class TopicComponent implements OnInit {
     }
 
     onSubmit() {
-      this._router.navigate(['topic-details']);
+      this._router.navigate(['topic-details'], { queryParams: { user: this.user} });
     }
     uitloggen() {
       this._router.navigate(['logout']);
