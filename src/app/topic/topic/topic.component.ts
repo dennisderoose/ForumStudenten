@@ -1,7 +1,7 @@
 import { TopicDataService } from '../topic-data.service';
 import { Component, OnInit, Input, EventEmitter, Output, ElementRef, ViewChild } from '@angular/core';
 import { Topic } from '../topic.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Opmerking } from 'app/topic/opmerking/opmerking.model';
 
@@ -22,16 +22,29 @@ export class TopicComponent implements OnInit {
   @ViewChildren("title") 
   private elTitle : QueryList<any>; 
 
+  private sub: any;
+  private user: string;
+
   private _topics: Topic[];
   public topictoevoegen: FormGroup;
   public uitloggenForum: FormGroup;
   public opmerkingtoevoegen: FormGroup;
   
-    constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private _router: Router) {
+    constructor(private fb: FormBuilder, private _topicDataService: TopicDataService, private route: ActivatedRoute, private _router: Router) {
     }
 
   
     ngOnInit() {
+      this.sub = this.route
+      .queryParams
+      .subscribe(params => {
+        // Defaults to 0 if no query param provided.
+        this.user = params['user'] || "";
+      });
+      console.log(this.user);
+
+
+
       this.topictoevoegen = this.fb.group({}); 
       this.uitloggenForum = this.fb.group({});     
       this.opmerkingtoevoegen = this.fb.group({

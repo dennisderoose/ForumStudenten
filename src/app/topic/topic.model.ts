@@ -3,19 +3,21 @@ export class Topic {
     private _id: string;
     private _name: string;
     private _vraag: string;
-    private _opmerkingen: Opmerking[];    
+    private _opmerkingen: Opmerking[];
+    private _user: string;    
 
     static fromJSON(json): Topic {
         console.log(json);
-        const rec = new Topic(json.name, json.vraag, json.opmerkingen);
+        const rec = new Topic(json.name, json.vraag, json.opmerkingen, json.user);
         rec._id = json._id;
         return rec;
     }
 
-    constructor(name: string, vraag: string, opmerkingen?: Opmerking[]) {
+    constructor(name: string, vraag: string, opmerkingen?: Opmerking[], user:string) {
         this._name = name;
         this._vraag = vraag;
-        this._opmerkingen = opmerkingen || new Array<Opmerking>();        
+        this._opmerkingen = opmerkingen || new Array<Opmerking>();
+        this._user = user;        
     }
 
     get id(): string {
@@ -43,6 +45,14 @@ export class Topic {
         return this._opmerkingen;
     }
 
+    get user(): string {
+        return this._user;
+    }
+    set user(user: string) {
+        this._user = user;
+    }
+
+
     addIngredient(opmerk: Opmerking) {
         this._opmerkingen.push(opmerk);
     }    
@@ -52,7 +62,8 @@ export class Topic {
             _id: this._id,
             name: this._name,
             vraag: this._vraag,
-            opmerkingen: this._opmerkingen
+            opmerkingen: this._opmerkingen,
+            user: this._user
         };
     }
 

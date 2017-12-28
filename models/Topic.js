@@ -10,7 +10,8 @@ let TopicSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Opmerking'
         }
-    }]
+    }],
+    user: String
 });
 
 mongoose.model('Topic', TopicSchema);

@@ -26,7 +26,8 @@ router.post("/webapptaak/topics/", auth, function(req, res, next) {
   let topic = new Topic({
     name: req.body.name,
     vraag: req.body.vraag,
-    opmerkingen: req.body.opmerkingen
+    opmerkingen: req.body.opmerkingen,
+    user: req.body.user
   });
   topic.save(function(err, post) {
     if (err) {
@@ -117,11 +118,11 @@ router.get("/webapptaak/topics/:topic", function(req, res) {
     res.json(rec);
   });
 });
-
+/*
 router.post("/webapptaak/topic/:topic/opmerkingen", function(req, res, next) {
-  let ing = new Opmerking(req.body);
-  console.log(ing);
-  ing.save(function(err, opmerking) {
+  let opm = new Opmerking(req.body);
+  console.log(opm);
+  opm.save(function(err, opmerking) {
     if (err) return next(err);
 
     req.topic.opmerkingen.push(opmerking);
@@ -130,6 +131,6 @@ router.post("/webapptaak/topic/:topic/opmerkingen", function(req, res, next) {
       res.json(opmerking);
     });
   });
-});
+});*/
 
 module.exports = router;
