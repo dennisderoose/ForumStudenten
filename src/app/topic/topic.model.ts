@@ -13,7 +13,7 @@ export class Topic {
         return rec;
     }
 
-    constructor(name: string, vraag: string, user:string, opmerkingen?: Opmerking[]) {
+    constructor(name: string, vraag: string, user?:string, opmerkingen?: Opmerking[]) {
         this._name = name;
         this._vraag = vraag;
         this._user = user;
