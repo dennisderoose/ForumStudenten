@@ -13,11 +13,12 @@ export class Topic {
         return rec;
     }
 
-    constructor(name: string, vraag: string, opmerkingen?: Opmerking[], user:string) {
+    constructor(name: string, vraag: string, user:string, opmerkingen?: Opmerking[]) {
         this._name = name;
         this._vraag = vraag;
+        this._user = user;
         this._opmerkingen = opmerkingen || new Array<Opmerking>();
-        this._user = user;        
+                
     }
 
     get id(): string {
