@@ -28,7 +28,7 @@ export class TopicDetailsComponent implements OnInit {
   }
 
   onSubmit() {
-    const topic = new Topic(this.topic.value.name, this.topic.value.vraag);
+    const topic = new Topic(this.topic.value.name, this.topic.value.vraag, null,"");
     this._topicDataService.addNewTopic(topic).subscribe(item => {
     });
     this._router.navigate(['topic']);
