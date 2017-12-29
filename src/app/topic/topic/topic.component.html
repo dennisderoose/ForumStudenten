@@ -15,7 +15,7 @@
   <div class="ui segment" id='topic-component{{topic._name}}' *ngFor="let topic of _topics">
     <h3 class="ui header" >{{topic?._name}}</h3>
     <p class="ui header" >{{topic?._vraag}}</p>
-    <p class="ui positive right floated button">aangemaakt door: {{topic?._user}}</p>
+    <p class="ui positive right floated p">aangemaakt door: {{topic?._user}}</p>
     <div *ngFor="let opmerking of topic.opmerkingen">
       <p>{{opmerking?.name}}</p>
     </div>
