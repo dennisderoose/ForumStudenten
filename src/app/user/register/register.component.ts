@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.authenticationService.register(this.user.value.username, this.passwordControl.value).subscribe(val => {
       if (val) {
-        this.router.navigate(['/topic']);
+        this.router.navigate(['/topic'], { queryParams: { user: this.user.value.username } });
       }
     });
   }
