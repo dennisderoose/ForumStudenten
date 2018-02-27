@@ -70,7 +70,7 @@ export class TopicComponent implements OnInit {
     } 
 
     opmerking(evnt) {
-      event.preventDefault();
+      evnt.preventDefault();
       //console.log(this.elTitle.toArray); 
       //evnt.opmerkingname.value = ' ';
       let teller = 0;
