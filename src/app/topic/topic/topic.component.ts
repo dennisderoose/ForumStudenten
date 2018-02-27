@@ -71,6 +71,7 @@ export class TopicComponent implements OnInit {
 
     opmerking(evnt) {
       //console.log(this.elTitle.toArray); 
+      //evnt.opmerkingname.value = ' ';
       let teller = 0;
       let value = "";
       let name = "";
@@ -112,7 +113,9 @@ export class TopicComponent implements OnInit {
 
       /*dit zorgt voorlopig voor de refresh van de pagina maar het zou beter aangepast    
       worden dat het niet gerefreshed hoeft te worden en het gewoon leeg maakt.*/
-      this.opmerkingtoevoegen.value = ' ';
+      //event.preventDefault();
+      //this.opmerkingtoevoegen.value = ' ';
+      evnt.opmerkingname.value = ' ';
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
