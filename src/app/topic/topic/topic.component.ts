@@ -81,6 +81,7 @@ export class TopicComponent implements OnInit {
           value = element.nativeElement.value
           name = element.nativeElement.name          
           teller ++;
+          
         }
 
       });
@@ -116,7 +117,14 @@ export class TopicComponent implements OnInit {
       worden dat het niet gerefreshed hoeft te worden en het gewoon leeg maakt.*/
       //event.preventDefault();
       //this.opmerkingtoevoegen.value = ' ';
-      evnt.opmerkingname.value = ' ';
+      //evnt.opmerkingname.value = ' ';
+      this.elTitle.forEach(function(element) {
+        if(element.nativeElement.value != "") {
+          element.nativeElement.value = " ";          
+          
+        }
+
+      });
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
