@@ -16,7 +16,8 @@
     <h3 class="ui header" >{{topic?._name}}</h3>
     <p class="ui header" >{{topic?._vraag}}</p>
     <p class="ui positive right floated p">aangemaakt door: {{topic?._user}}</p>
-    <div class="ui segment" *ngFor="let opmerking of topic.opmerkingen">
+    <div class="ui segment" *ngFor="let opmerking of topic.opmerkingen; let i=index">
+      <p>{{i}}</p>
       <p>{{opmerking?.name}}</p>
     </div>
     <div class="field">
