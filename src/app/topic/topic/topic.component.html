@@ -17,10 +17,8 @@
     <p class="ui header" >{{topic?._vraag}}</p>
     <p class="ui positive right floated p">aangemaakt door: {{topic?._user}}</p>
     <div class="ui segment" *ngFor="let opmerking of topic.opmerkingen; let i=index">
-      <p>{{i}}</p>
-      <div *ng-if="i > 2">
-        <p>{{opmerking?.name}}</p>
-      </div>
+      <p>{{i}}</p>      
+      <p *ngIf="i > 2">{{opmerking?.name}}</p>
     </div>
     <div class="field">
     <label for="Opmerking">Opmerking invullen:</label> 
