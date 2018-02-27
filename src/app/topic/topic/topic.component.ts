@@ -109,7 +109,8 @@ export class TopicComponent implements OnInit {
       //console.log(this.elTitle.nativeElement.name);
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
-      /*dit zorgt voorlopig voor de refresh van de pagina maar het zou beter aangepast
+
+      /*dit zorgt voorlopig voor de refresh van de pagina maar het zou beter aangepast    
       worden dat het niet gerefreshed hoeft te worden en het gewoon leeg maakt.*/
       this.opmerkingtoevoegen.value = "";
       /*const topic = new Topic("kop","hln");
