@@ -96,7 +96,7 @@ export class TopicComponent implements OnInit {
             topic = element;
           }
         });
-        console.log(topic);
+        console.log(topic+"dennis");
         
         this._topicDataService.updateTopic(topic,topic.id);
 
