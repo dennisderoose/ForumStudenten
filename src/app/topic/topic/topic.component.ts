@@ -112,7 +112,7 @@ export class TopicComponent implements OnInit {
 
       /*dit zorgt voorlopig voor de refresh van de pagina maar het zou beter aangepast    
       worden dat het niet gerefreshed hoeft te worden en het gewoon leeg maakt.*/
-      this.opmerkingtoevoegen.value = "";
+      this.opmerkingtoevoegen.value = ' ';
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
