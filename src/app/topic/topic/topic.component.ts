@@ -139,5 +139,11 @@ export class TopicComponent implements OnInit {
             }          
           });
       });*/  
-    }   
+    }  
+    
+    zienOpmerking(){
+     console.log("meerdere commentaren zien werkt"); 
+    }
+
+
 }
