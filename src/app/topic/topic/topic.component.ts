@@ -50,10 +50,7 @@ export class TopicComponent implements OnInit {
         opmerkingname: ['', [Validators.required, Validators.minLength(3)]],
         topic: ['', [Validators.required, Validators.minLength(3)]]
       });  
-      console.log("start");
       this._topicDataService.topics.subscribe(items => this._topics = items);
-      console.log(this._topics);
-      console.log("einde");
     }
     get topics() {
       return this._topics;
