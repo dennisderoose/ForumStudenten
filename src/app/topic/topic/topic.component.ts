@@ -94,6 +94,7 @@ export class TopicComponent implements OnInit {
           if(element.name == name) {
             element.opmerkingen.push(new Opmerking(element.id,value));
             topic = element;
+            
           }
         });
         console.log(topic+"dennis");
@@ -108,6 +109,7 @@ export class TopicComponent implements OnInit {
       //console.log(this.elTitle.nativeElement.name);
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
+      this.opmerkingtoevoegen.value = null;
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
