@@ -81,7 +81,7 @@ export class TopicComponent implements OnInit {
           value = element.nativeElement.value
           name = element.nativeElement.name          
           teller ++;
-          element.nativeElement.value = " "; 
+          element.nativeElement.value = ""; 
         }
 
       });
