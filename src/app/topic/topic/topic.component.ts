@@ -109,7 +109,7 @@ export class TopicComponent implements OnInit {
       //console.log(this.elTitle.nativeElement.name);
       console.log(this.opmerkingtoevoegen.value.opmerkingname);    
       let nextArray = [];
-      this.opmerkingtoevoegen.value.opmerkingname.value = '';
+      this.opmerkingtoevoegen.value.opmerkingname.clear;
       /*const topic = new Topic("kop","hln");
       const opmerking = new Opmerking("klm");
       nextArray.push(opmerking);
