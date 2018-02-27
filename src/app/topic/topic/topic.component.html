@@ -30,7 +30,7 @@
           <p *ngIf="i < 2">{{opmerking?.name}}</p> 
           <div *ngIf="i == 2" style="text-align: center;">
               <!--<input type="button" value="meerdere commentaren zien">-->
-              <button (ngSubmit)='zienOpmerking'>Meerdere commentaren zien</button>
+              <button (click)='zienOpmerking'>Meerdere commentaren zien</button>
            </div>     
           <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
        </div>
