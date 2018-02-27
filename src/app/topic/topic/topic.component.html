@@ -20,10 +20,10 @@
       <div *ngIf="i < 3"> 
        <div class="ui segment">  
           <p *ngIf="i < 2">{{opmerking?.name}}</p> 
-          <div style="text-align: center;">
-              <input type="button" value="button">
+          <div *ngIf="i == 2" style="text-align: center;">
+              <input type="button" value="meerdere commentaren zien">
            </div>     
-          <a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>
+          <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
        </div>
       </div> 
       <!--tonen van andere opmerkingen als meerdere commentaren is ingeduwd-->
