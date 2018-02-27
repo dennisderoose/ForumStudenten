@@ -22,7 +22,8 @@
         <input type="text" id="Opmerking{{topic._name}}" formControlName='opmerkingname' [name]="topic._name" ngControl="opmerking" [ngModel]="" #title>
         <button type='submit' id="{{topic._name}}" class="ui positive right floated button">add</button>
     </div> 
-
+    <br>
+    <br>
     <div *ngFor="let opmerking of topic.opmerkingen; let i=index">   
       <div *ngIf="i < 3"> 
        <div class="ui segment">  
