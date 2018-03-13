@@ -147,7 +147,8 @@ export class TopicComponent implements OnInit {
       });*/  
     }  
     
-    zienOpmerking(){
+    zienOpmerking(vraag){
+      console.log(vraag);
       this.buttongeklikt = true;
      console.log("meerdere commentaren zien werkt"); 
     }
