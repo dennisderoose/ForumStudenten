@@ -27,7 +27,7 @@
     <div *ngFor="let opmerking of topic.opmerkingen; let i=index">   
       <div *ngIf="i < 3"> 
        <div class="ui segment">  
-          <p *ngIf="i < 2">{{opmerking?.name}}</p> 
+          <p *ngIf="i < 2 == false">{{opmerking?.name}}</p> 
           <div *ngIf="i == 2" style="text-align: center;">
               <!--<input type="button" value="meerdere commentaren zien">-->
               <button (click)='zienOpmerking()'>Meerdere commentaren zien</button>
