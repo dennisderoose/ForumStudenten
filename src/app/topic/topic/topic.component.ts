@@ -17,7 +17,7 @@ import { QueryList } from '@angular/core/src/linker/query_list';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  buttongeklikt = true;
+  buttongeklikt = false;
 
   getButtonGeklikt() {
     return this.buttongeklikt;
@@ -148,7 +148,7 @@ export class TopicComponent implements OnInit {
     }  
     
     zienOpmerking(){
-
+      this.buttongeklikt = true;
      console.log("meerdere commentaren zien werkt"); 
     }
 
