@@ -140,8 +140,9 @@ export class TopicComponent implements OnInit {
           });
       });*/  
     }  
-    
+    private buttongeklikt = false;
     zienOpmerking(){
+
      console.log("meerdere commentaren zien werkt"); 
     }
 
