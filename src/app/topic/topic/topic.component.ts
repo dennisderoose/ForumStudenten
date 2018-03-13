@@ -17,7 +17,7 @@ import { QueryList } from '@angular/core/src/linker/query_list';
   styleUrls: ['./topic.component.css']
 })
 export class TopicComponent implements OnInit {
-  buttongeklikt = false;
+  buttongeklikt = true;
 
   getButtonGeklikt() {
     return this.buttongeklikt;
