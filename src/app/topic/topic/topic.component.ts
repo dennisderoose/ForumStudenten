@@ -18,10 +18,15 @@ import { QueryList } from '@angular/core/src/linker/query_list';
 })
 export class TopicComponent implements OnInit {
   buttongeklikt = false;
+  buttongekliktvraag;
 
   getButtonGeklikt() {
     return this.buttongeklikt;
   }
+
+  getButtonGekliktVraag() {
+    return this.buttongekliktvraag;
+  }  
 
   @Output() model;
 
@@ -148,8 +153,9 @@ export class TopicComponent implements OnInit {
     }  
     
     zienOpmerking(vraag){
-      console.log(vraag);
-      this.buttongeklikt = true;
+     this.buttongekliktvraag = vraag;
+     console.log(vraag);
+     this.buttongeklikt = true;
      console.log("meerdere commentaren zien werkt"); 
     }
 
