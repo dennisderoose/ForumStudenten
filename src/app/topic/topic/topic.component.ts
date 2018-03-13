@@ -18,6 +18,11 @@ import { QueryList } from '@angular/core/src/linker/query_list';
 })
 export class TopicComponent implements OnInit {
   buttongeklikt = false;
+
+  getButtonGeklikt() {
+    return this.buttongeklikt;
+  }
+
   @Output() model;
 
   @ViewChildren("title") 
