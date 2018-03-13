@@ -30,7 +30,7 @@
           <p *ngIf="i < 2 && buttongeklikt == false">{{opmerking?.name}}</p> 
           <div *ngIf="i == 2" style="text-align: center;">
               <!--<input type="button" value="meerdere commentaren zien">-->
-              <button *ngIf="buttongeklikt == false" (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button>
+              <button *ngIf="buttongeklikt == false && topic._vraag !=buttongekliktvraag" (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button>
            </div> 
            <!--proberen meerdere commentaren te zien als button is geklikt-->
            <p *ngIf="buttongeklikt == true">{{opmerking?.name}}</p>    
