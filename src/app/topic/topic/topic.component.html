@@ -33,7 +33,7 @@
               <button (click)='zienOpmerking()'>Meerdere commentaren zien</button>
            </div> 
            <!--proberen meerdere commentaren te zien als button is geklikt-->
-           <p*ngIf="buttongeklikt == false">{{opmerking?.name}}</p>    
+           <p*ngIf="let buttongeklikt of buttongeklikt == false">{{opmerking?.name}}</p>    
           <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
        </div>
       </div> 
