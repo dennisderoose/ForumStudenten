@@ -25,7 +25,7 @@
     <br>
     <br>
     <div *ngFor="let opmerking of topic.opmerkingen; let i=index">   
-      <div *ngIf="i < 3"> 
+      <div *ngIf="i < 3000"> 
        <div class="ui segment">  
           <p *ngIf="i < 2 && buttongeklikt == false">{{opmerking?.name}}</p> 
           <div *ngIf="i == 2" style="text-align: center;">
