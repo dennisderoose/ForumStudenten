@@ -26,8 +26,10 @@
     <br>
     <div *ngFor="let opmerking of topic.opmerkingen; let i=index">   
       <div *ngIf="i < 3000"> 
-       <div>  
-          <p *ngIf="i < 2 && topic._vraag != buttongekliktvraag">{{opmerking?.name}}</p> 
+       <div>
+            <div class="ui segment">  
+               <p *ngIf="i < 2 && topic._vraag != buttongekliktvraag">{{opmerking?.name}}</p> 
+            </div>
           <div *ngIf="i == 2" style="text-align: center;">
               <!--<input type="button" value="meerdere commentaren zien">-->
               
@@ -68,7 +70,9 @@
               </ng-template>
            </div>
            <!--proberen meerdere commentaren te zien als button is geklikt-->
-           <p *ngIf="buttongeklikt == true  && topic._vraag == buttongekliktvraag">{{opmerking?.name}}</p>    
+           <div class="ui segment">  
+                <p *ngIf="buttongeklikt == true  && topic._vraag == buttongekliktvraag">{{opmerking?.name}}</p>    
+           </div>
           <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
        </div>
       </div> 
