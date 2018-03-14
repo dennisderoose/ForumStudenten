@@ -8,8 +8,8 @@ import { Opmerking } from 'app/topic/opmerking/opmerking.model';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
-import { ViewChildren } from '@angular/core/src/metadata/di';
-import { QueryList } from '@angular/core/src/linker/query_list';
+import { ViewChild } from '@angular/core';
+import { QueryList } from '@angular/core';
 
 @Component({
   selector: 'app-topic',
