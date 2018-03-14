@@ -19,11 +19,11 @@ export class TopicComponent implements OnInit {
   buttongeklikt = false;
   buttongekliktvraag = "";
 
-  getButtonGeklikt() {
+  get ButtonGeklikt() {
     return this.buttongeklikt;
   }
 
-  getButtonGekliktVraag() {
+  get ButtonGekliktVraag() {
     return this.buttongekliktvraag;
   }  
 
