@@ -33,7 +33,7 @@
               
               
 
-              <div *ngIf="buttongeklikt == false; then logout else login"></div>
+              <div *ngIf="buttongeklikt == false;then logout else login"></div>
 
               <ng-template #login>Please login to continue.</ng-template>
               <ng-template #logout>Hi Gary, <button>Logout now</button>.</ng-template>
