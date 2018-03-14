@@ -33,7 +33,7 @@
               
               <div *ngIf="buttongeklikt == false; then showbutton else dontshow"></div>
 
-              <ng-template #showbutton></ng-template><button(click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button></ng-template>
+              <ng-template #showbutton><button(click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button></ng-template>
               <ng-template #dontshow>niet tonen</ng-template>
 
 
