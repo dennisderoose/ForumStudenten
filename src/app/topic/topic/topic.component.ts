@@ -152,8 +152,9 @@ export class TopicComponent implements OnInit {
     }  
     
     zienOpmerking(vraag){
+     console.log(this.buttongekliktvraag);
      this.buttongekliktvraag = vraag;
-     console.log(vraag);
+     console.log(this.buttongekliktvraag);
      this.buttongeklikt = true;
      console.log("meerdere commentaren zien werkt"); 
     }
