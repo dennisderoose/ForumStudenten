@@ -27,10 +27,7 @@
     <div *ngFor="let opmerking of topic.opmerkingen; let i=index">   
       <div *ngIf="i < 3000"> 
        <div class="ui segment">  
-          <div *ngIf="i < 2; then showopmerking else dontshowopmerking">{{opmerking?.name}}</div> 
-          <ng-template #showopmerking><p>{{opmerking?.name}}</p></ng-template>
-          <ng-template #dontshowopmerking><p></p></ng-template>
-
+          <p *ngIf="i < 2 && && topic._vraag != buttongekliktvraag">{{opmerking?.name}}</p> 
           <div *ngIf="i == 2" style="text-align: center;">
               <!--<input type="button" value="meerdere commentaren zien">-->
               
