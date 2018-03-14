@@ -56,6 +56,17 @@
 
               <!--<button *ngIf="buttongeklikt == false && topic._vraag !='b'" [name]="topic._vraag" (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button>-->
            </div>
+           <!--i groter dan 2 -->
+           
+           <div *ngIf="i > 2 && buttongeklikt == true; then shownothing else shownext">
+              <ng-template #shownothing>
+                  <p>{{opmerking?.name}}</p>
+              </ng-template>
+
+              <ng-template #shownext>
+                  <p>niks</p>
+              </ng-template>
+           </div>
            <!--proberen meerdere commentaren te zien als button is geklikt-->
            <p *ngIf="buttongeklikt == true  && topic._vraag == buttongekliktvraag">{{opmerking?.name}}</p>    
           <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
