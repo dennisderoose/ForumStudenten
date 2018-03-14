@@ -45,7 +45,7 @@
               <ng-template #showbutton><button (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button></ng-template>
               <ng-template #second>
                   <div *ngIf="buttongeklikt == true && topic._vraag == buttongekliktvraag; then toontekst else dontshow"></div>
-                  <ng-template #toontekst>{{buttongekliktvraag}}</ng-template>   
+                  <ng-template #toontekst>{{opmerking?.name}}</ng-template>   
                   <ng-template #dontshow><button (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button></ng-template>              
               </ng-template>
               <!--<div *ngIf="buttongeklikt == false; then showbutton else dontshow"></div>
@@ -57,7 +57,7 @@
               <!--<button *ngIf="buttongeklikt == false && topic._vraag !='b'" [name]="topic._vraag" (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button>-->
            </div> 
            <!--proberen meerdere commentaren te zien als button is geklikt-->
-           <p *ngIf="buttongeklikt == true  && topic._vraag =='buttongekliktvraag'">{{opmerking?.name}}</p>    
+           <p *ngIf="buttongeklikt == true  && topic._vraag =='b'">{{opmerking?.name}}</p>    
           <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
        </div>
       </div> 
