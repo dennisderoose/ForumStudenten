@@ -55,9 +55,9 @@
 
 
               <!--<button *ngIf="buttongeklikt == false && topic._vraag !='b'" [name]="topic._vraag" (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button>-->
-           </div> 
+           </div>
            <!--proberen meerdere commentaren te zien als button is geklikt-->
-           <p *ngIf="buttongeklikt == true  && topic._vraag =='b'">{{opmerking?.name}}</p>    
+           <p *ngIf="buttongeklikt == true  && topic._vraag == buttongekliktvraag">{{opmerking?.name}}</p>    
           <!--<a *ngIf="i == 2"><button><p align="center"> meerdere commentaren zien</p></button></a>-->
        </div>
       </div> 
