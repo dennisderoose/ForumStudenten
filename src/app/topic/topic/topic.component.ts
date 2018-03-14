@@ -17,7 +17,7 @@ import { ViewChildren, QueryList } from '@angular/core';
 })
 export class TopicComponent implements OnInit {
   buttongeklikt = false;
-  buttongekliktvraag;
+  buttongekliktvraag = "";
 
   getButtonGeklikt() {
     return this.buttongeklikt;

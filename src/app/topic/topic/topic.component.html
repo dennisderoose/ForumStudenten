@@ -45,7 +45,7 @@
               <ng-template #showbutton><button (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button></ng-template>
               <ng-template #second>
                   <div *ngIf="buttongeklikt == true && topic._vraag == 'b';else dontshow"></div>
-                  <ng-template #toontekst>tekst</ng-template>   
+                  <ng-template #toontekst>{{buttongekliktvraag}}</ng-template>   
                   <ng-template #dontshow><button (click)='zienOpmerking(topic._vraag)'>Meerdere commentaren zien</button></ng-template>              
               </ng-template>
               <!--<div *ngIf="buttongeklikt == false; then showbutton else dontshow"></div>
